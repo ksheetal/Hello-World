@@ -1,12 +1,20 @@
 package main
 
-import "fmt"
-
 func main() {
 
-	Print("Hello World")
-}
+	hr := &HR{g: &GreetService{}}
+	f := &Finance{g: &GreetService{}}
+	i := &Intern{g: &GreetService{}}
 
-func Print(str string) {
-	fmt.Println(str)
+	c := &CEO{g: &GreetService{}, f: f, hr: hr, i: i}
+
+	//hr.Greet()
+	//hr.AskDoubts()
+	//
+	//f.Greet()
+	//f.AskDoubts()
+
+	c.Greet()
+	c.AskDoubts()
+	c.FireAll()
 }
